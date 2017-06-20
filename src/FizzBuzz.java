@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /*
  * Classic FizzBuzz Interview Question
  * Srikant Kumar Kalaputapu
@@ -7,7 +9,22 @@ public class FizzBuzz {
 
 	public static void main(String[] args) {
 		
-		for(int i = 1; i <= 100; i++){
+		int start, end;
+		Scanner keyboard = new Scanner(System.in);
+		
+		System.out.println("Enter starting integer: ");
+		start = keyboard.nextInt();
+		System.out.println("Enter ending integer: ");
+		end = keyboard.nextInt();
+		
+		if( start > end){
+			System.out.println("Swapping endpoints");
+			int temp = start;
+			start = end;
+			end = temp;
+		}
+		
+		for(int i = start; i <= end; i++){
 
 			// Every 3rd FizzBuzz
 			if (i % 45 == 0){
